@@ -12,3 +12,4 @@ export { DriverProfiles } from './DriverProfiles'
 export { SEOSchema } from './SEOSchema'
 
 
+export { FAQSection } from './FAQSection'

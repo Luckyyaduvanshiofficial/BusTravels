@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1100" viewBox="0 0 1400 1100" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1400" y2="1100" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F172A"/>
+      <stop offset="1" stop-color="#1D4ED8"/>
+    </linearGradient>
+    <linearGradient id="card1" x1="0" y1="0" x2="460" y2="340" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F97316"/>
+      <stop offset="1" stop-color="#EA580C"/>
+    </linearGradient>
+    <linearGradient id="card2" x1="0" y1="0" x2="460" y2="340" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#16A34A"/>
+      <stop offset="1" stop-color="#15803D"/>
+    </linearGradient>
+    <linearGradient id="card3" x1="0" y1="0" x2="460" y2="340" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7C3AED"/>
+      <stop offset="1" stop-color="#5B21B6"/>
+    </linearGradient>
+  </defs>
+  <rect width="1400" height="1100" fill="url(#bg)"/>
+  <circle cx="1210" cy="170" r="200" fill="#ffffff" fill-opacity="0.08"/>
+  <circle cx="200" cy="980" r="260" fill="#ffffff" fill-opacity="0.08"/>
+  <rect x="110" y="160" width="540" height="370" rx="32" fill="url(#card1)"/>
+  <rect x="780" y="230" width="500" height="320" rx="32" fill="url(#card2)"/>
+  <rect x="330" y="560" width="760" height="390" rx="32" fill="url(#card3)"/>
+  <path d="M220 370C330 250 420 300 520 230C650 140 760 230 870 180C980 130 1080 150 1180 280" stroke="#FDE68A" stroke-width="12" stroke-linecap="round" stroke-dasharray="24 20"/>
+  <text x="150" y="250" fill="white" font-family="Arial, sans-serif" font-size="38" font-weight="700">Jaipur</text>
+  <text x="880" y="360" fill="white" font-family="Arial, sans-serif" font-size="34" font-weight="700">Delhi</text>
+  <text x="470" y="770" fill="white" font-family="Arial, sans-serif" font-size="46" font-weight="700">Rajasthan Routes</text>
+</svg>
