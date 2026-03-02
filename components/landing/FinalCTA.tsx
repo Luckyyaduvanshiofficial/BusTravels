@@ -35,7 +35,7 @@ export function FinalCTA() {
         <Link href="/search" className="block">
           <Button
             size="lg"
-            className="w-full sm:w-80 h-14 bg-white text-saffron font-bold text-lg rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.2)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.28)] hover:scale-105 transition-all"
+            className="w-full sm:w-[400px] h-14 bg-white text-saffron font-bold text-lg rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.2)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.28)] hover:scale-105 transition-all"
           >
             <Search className="mr-2 w-5 h-5" />
             Search Vehicles
@@ -49,12 +49,12 @@ export function FinalCTA() {
           href={`https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="block w-full sm:w-80 mx-auto"
+          className="block w-full sm:w-[400px] mx-auto"
           aria-label="Chat on WhatsApp"
         >
           <Button
             size="lg"
-            className="w-full h-13 bg-[#25D366] hover:bg-[#22c55e] text-white font-semibold text-base rounded-2xl animate-whatsapp-pulse hover:scale-105 transition-all"
+            className="w-full h-14 bg-[#25D366] hover:bg-[#22c55e] text-white font-semibold text-lg rounded-2xl animate-whatsapp-pulse hover:scale-105 transition-all"
           >
             <MessageCircle className="mr-2 w-5 h-5" />
             Chat on WhatsApp

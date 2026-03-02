@@ -4,7 +4,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
 import "./globals.css";
 
-const defaultUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://luckyyaduvanshi.in";
+const defaultUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://busbookingapp.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(defaultUrl),

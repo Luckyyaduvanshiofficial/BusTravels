@@ -185,6 +185,7 @@ export default {
       fontFamily: {
         sans: ['var(--font-inter)', 'sans-serif'],
         display: ['var(--font-poppins)', 'var(--font-outfit)', 'sans-serif'],
+        heading: ['var(--font-poppins)', 'var(--font-outfit)', 'sans-serif'],
         hindi: ['var(--font-devanagari)', 'sans-serif'],
       },
       keyframes: {
@@ -212,6 +213,10 @@ export default {
           '0%': { opacity: '0', transform: 'translateX(24px)' },
           '100%': { opacity: '1', transform: 'translateX(0)' },
         },
+        shimmer: {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(100%)' },
+        },
       },
       animation: {
         'bounce-subtle': 'bounce-subtle 2s ease-in-out infinite',
@@ -220,6 +225,7 @@ export default {
         'count-up': 'count-up 0.5s ease-out forwards',
         'pulse-whatsapp': 'pulse-whatsapp 3s ease-in-out infinite',
         'slide-in-right': 'slide-in-right 0.5s ease-out forwards',
+        shimmer: 'shimmer 1.6s infinite',
       },
     },
   },

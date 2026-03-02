@@ -12,8 +12,8 @@ const USE_CASES = [
     emoji: '💐',
     label: 'Weddings',
     labelHindi: 'शादी-बारात',
-    image: '/images/usecases/wedding.jpg',
-    imageAlt: 'Decorated wedding bus with marigold flowers',
+    image: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=1200',
+    imageAlt: 'Decorated bus for a wedding',
     gradientFallback: 'from-pink-400 to-rose-500',
     heading: 'Barat Transport Made Easy',
     description:
@@ -36,8 +36,8 @@ const USE_CASES = [
     emoji: '🕉️',
     label: 'Religious Tours',
     labelHindi: 'तीर्थ यात्रा',
-    image: '/images/usecases/religious.jpg',
-    imageAlt: 'Indian family at temple with bus in background',
+    image: 'https://images.unsplash.com/photo-1545389336-cf090694435e?auto=format&fit=crop&q=80&w=1200',
+    imageAlt: 'Family at a temple',
     gradientFallback: 'from-amber-400 to-yellow-500',
     heading: 'Spiritual Journeys, Comfortable Travel',
     description:
@@ -60,8 +60,8 @@ const USE_CASES = [
     emoji: '👨‍👩‍👧',
     label: 'Family Trips',
     labelHindi: 'पारिवारिक यात्रा',
-    image: '/images/usecases/family.jpg',
-    imageAlt: 'Multi-generation Indian family on a trip',
+    image: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&q=80&w=1200',
+    imageAlt: 'Family group on a trip',
     gradientFallback: 'from-green-400 to-teal-500',
     heading: 'Create Memories Together',
     description:

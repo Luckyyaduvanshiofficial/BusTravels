@@ -25,6 +25,7 @@ export function SignUpForm({
   const [repeatPassword, setRepeatPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [successMessage, setSuccessMessage] = useState<string | null>(null);
   const router = useRouter();
 
   const handleSignUp = async (e: React.SyntheticEvent<HTMLFormElement>) => {
@@ -40,7 +41,7 @@ export function SignUpForm({
     }
 
     try {
-      const { error } = await supabase.auth.signUp({
+      const { data, error } = await supabase.auth.signUp({
         email,
         password,
         options: {
@@ -51,6 +52,13 @@ export function SignUpForm({
         },
       });
       if (error) throw error;
+      if (!data.session) {
+        // Email confirmation required — session is null until user clicks the link
+        setSuccessMessage(
+          "Registration successful! Please check your email and click the confirmation link to activate your account."
+        );
+        return;
+      }
       router.push("/");
       router.refresh();
     } catch (error: unknown) {
@@ -108,7 +116,12 @@ export function SignUpForm({
                 />
               </div>
               {error && <p className="text-sm font-medium text-destructive bg-destructive/10 p-3 rounded-lg">{error}</p>}
-              <Button type="submit" className="w-full bg-primary hover:bg-primary-dark text-white font-display tracking-wide font-semibold shadow-md py-6 rounded-lg mt-2" disabled={isLoading}>
+              {successMessage && (
+                <p className="text-sm font-medium text-green-700 bg-green-50 border border-green-200 p-3 rounded-lg">
+                  {successMessage}
+                </p>
+              )}
+              <Button type="submit" className="w-full bg-primary hover:bg-primary-dark text-white font-display tracking-wide font-semibold shadow-md py-6 rounded-lg mt-2" disabled={isLoading || !!successMessage}>
                 {isLoading ? "Creating account..." : "Sign Up"}
               </Button>
             </div>

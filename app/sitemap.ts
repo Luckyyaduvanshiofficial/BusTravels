@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://luckyyaduvanshi.in";
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://busbookingapp.com";
 
   // Static pages
   const staticPages = [

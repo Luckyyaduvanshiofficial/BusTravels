@@ -16,7 +16,7 @@ const VEHICLES = [
     pricePerKm: '₹10',
     perfectFor: ['Airport pickups', 'City transfers', 'Small family trips'],
     amenities: ['AC & Music', 'Comfortable seats', 'Luggage space', 'GPS tracking'],
-    image: '/images/vehicles/tavera.jpg',
+    image: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=1600',
     color: 'from-amber-500 to-orange-500',
   },
   {
@@ -28,7 +28,7 @@ const VEHICLES = [
     pricePerKm: '₹12',
     perfectFor: ['Family trips (7 pax)', 'Airport pickups', 'Short tours'],
     amenities: ['AC, Music, GPS', 'Premium seats', 'USB charging', 'Ample legroom'],
-    image: '/images/vehicles/innova.jpg',
+    image: 'https://images.unsplash.com/photo-1550355291-bbee04a92027?auto=format&fit=crop&q=80&w=1600',
     color: 'from-blue-500 to-royalBlue',
   },
   {
@@ -40,7 +40,7 @@ const VEHICLES = [
     pricePerKm: '₹14',
     perfectFor: ['Pilgrimage tours', 'Corporate outings', 'Family gatherings'],
     amenities: ['AC, Music, GPS', 'Pushback seats', '2×2 layout', 'Water bottles'],
-    image: '/images/vehicles/tempo.jpg',
+    image: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=1600',
     color: 'from-green-500 to-forestGreen',
   },
   {
@@ -52,7 +52,7 @@ const VEHICLES = [
     pricePerKm: '₹16',
     perfectFor: ['Wedding baraat', 'Religious groups', 'School excursions'],
     amenities: ['AC & Entertainment', 'Reclining seats', 'Mic system', 'Decorated on request'],
-    image: '/images/vehicles/mini-bus.jpg',
+    image: 'https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&q=80&w=1600',
     color: 'from-purple-500 to-deepPurple',
   },
   {
@@ -64,7 +64,7 @@ const VEHICLES = [
     pricePerKm: '₹20',
     perfectFor: ['Long-distance tours', 'Corporate travel', 'Festival groups'],
     amenities: ['AC, Wi-Fi, TV', 'Airplane-style seats', 'Reading lights', 'Onboard restroom'],
-    image: '/images/vehicles/volvo.jpg',
+    image: 'https://images.unsplash.com/photo-1464219789935-c2d9d9aba644?auto=format&fit=crop&q=80&w=1600',
     color: 'from-saffron to-terracotta',
   },
 ]
@@ -137,9 +137,9 @@ export function VehicleTypes() {
           className="reveal grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 items-center"
         >
           {/* Image */}
-          <div className="lg:col-span-3 rounded-2xl overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.1)] relative">
+          <div className="lg:col-span-3 rounded-2xl overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.1)]">
             <div
-              className={`w-full aspect-[16/10] bg-gradient-to-br flex items-center justify-center`}
+              className={`w-full aspect-[16/10] bg-gradient-to-br ${active.color} relative flex items-center justify-center`}
               role="img"
               aria-label={`${active.name} vehicle`}
             >

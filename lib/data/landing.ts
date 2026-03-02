@@ -17,7 +17,7 @@ export const DRIVER_PROFILES = [
   { id: 'd1', name: 'Ramesh Singh', experience: '15 Years', languages: ['Hindi', 'English', 'Marwari'], specialization: 'Volvo & Luxury Buses', rating: 4.8, trips: 1200, imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200&h=200' },
   { id: 'd2', name: 'Vikram Sharma', experience: '8 Years', languages: ['Hindi', 'English'], specialization: 'Tempo Traveller, Innova', rating: 4.9, trips: 850, imageUrl: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=200&h=200' },
   { id: 'd3', name: 'Abdul Khan', experience: '12 Years', languages: ['Hindi', 'Urdu', 'English'], specialization: 'Mini Bus, Interstate', rating: 4.7, trips: 940, imageUrl: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=200&h=200' },
-  { id: 'd4', name: 'Sunil Gurjar', experience: '10 Years', languages: ['Hindi', 'Marwari'], specialization: 'Outstation Religious Tours', rating: 4.9, trips: 1100, imageUrl: 'https://images.unsplash.com/photo-1530268729831-4b0b9e170241?auto=format&fit=crop&q=80&w=200&h=200' },
+  { id: 'd4', name: 'Sunil Gurjar', experience: '10 Years', languages: ['Hindi', 'Marwari'], specialization: 'Outstation Religious Tours', rating: 4.9, trips: 1100, imageUrl: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=200&h=200' },
 ]
 
 export const TESTIMONIALS = [

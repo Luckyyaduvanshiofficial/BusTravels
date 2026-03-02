@@ -75,6 +75,6 @@ export const config = {
      * - api routes    (they handle their own auth via supabase.auth.getUser())
      * - public files  (svg, png, jpg, …)
      */
-    String.raw`/((?!_next/static|_next/image|favicon\.ico|api/|.*\.(?:svg|png|jpg|jpeg|gif|webp|ico|manifest\.json)$).*)`,
+    "/((?!_next/static|_next/image|favicon\\.ico|api/|manifest\\.json$|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico)$).*)",
   ],
 };

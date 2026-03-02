@@ -128,7 +128,7 @@ export function SearchWidget() {
             if (location.length > 1) setShowSuggestions(true);
           }}
           placeholder="Pickup location (e.g., Jaipur Railway Station)"
-          className="pl-11 h-13 text-base border-gray-200 focus:border-saffron focus:ring-saffron/20 rounded-xl"
+          className="pl-11 h-[52px] text-base border-gray-200 focus:border-saffron focus:ring-saffron/20 rounded-xl"
           aria-label="Pickup location"
           role="combobox"
           aria-expanded={showSuggestions}
@@ -168,7 +168,7 @@ export function SearchWidget() {
             type="date"
             value={date}
             onChange={(e) => setDate(e.target.value)}
-            className="pl-11 h-13 text-base border-gray-200 w-full focus:border-royalBlue focus:ring-royalBlue/20 rounded-xl appearance-none"
+            className="pl-11 h-[52px] text-base border-gray-200 w-full focus:border-royalBlue focus:ring-royalBlue/20 rounded-xl appearance-none"
             aria-label="Travel date"
             min={new Date().toISOString().split('T')[0]}
             required
@@ -183,7 +183,7 @@ export function SearchWidget() {
             placeholder="Passengers"
             min={1}
             max={65}
-            className="pl-11 h-13 text-base border-gray-200 focus:border-royalBlue w-full focus:ring-royalBlue/20 rounded-xl"
+            className="pl-11 h-[52px] text-base border-gray-200 focus:border-royalBlue w-full focus:ring-royalBlue/20 rounded-xl"
             aria-label="Number of passengers"
           />
         </div>
@@ -228,7 +228,7 @@ export function SearchWidget() {
         ) : (
           <span className="flex items-center justify-center gap-2">
             <Search className="w-5 h-5" aria-hidden="true" />
-            Find Vehicles
+            Search Vehicles
           </span>
         )}
       </Button>

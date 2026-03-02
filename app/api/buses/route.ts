@@ -15,7 +15,7 @@ export async function GET(request: NextRequest) {
 
     let query = supabase.from("buses").select(`
       *,
-      operator:users!buses_operator_id_fk_users_id(id, name, phone, email, company_name, rating_avg)
+      operator:users!buses_operator_id_f54c6fdd_fk_users_id(id, name, phone, email, company_name, rating_avg)
     `);
 
     // If requesting own buses (operator view)
