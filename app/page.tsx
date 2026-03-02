@@ -10,6 +10,7 @@ import {
   TrustSafety,
   Testimonials,
   FinalCTA,
+  FAQSection,
   LandingFooter,
   SEOSchema
 } from '@/components/landing'
@@ -83,11 +84,14 @@ export default function LandingPage() {
         {/* S8 – Testimonials */}
         <Testimonials />
 
-        {/* S9 – Final CTA */}
+        {/* S9 – FAQs */}
+        <FAQSection />
+
+        {/* S10 – Final CTA */}
         <FinalCTA />
       </main>
 
-      {/* S10 – Footer */}
+      {/* S11 – Footer */}
       <LandingFooter />
 
       {/* Floating WhatsApp Button (mobile) */}

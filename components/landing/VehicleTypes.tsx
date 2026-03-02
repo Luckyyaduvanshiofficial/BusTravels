@@ -2,9 +2,9 @@
 
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 import { Check, ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { SafeImage } from './SafeImage'
 
 const VEHICLES = [
   {
@@ -16,7 +16,7 @@ const VEHICLES = [
     pricePerKm: '₹10',
     perfectFor: ['Airport pickups', 'City transfers', 'Small family trips'],
     amenities: ['AC & Music', 'Comfortable seats', 'Luggage space', 'GPS tracking'],
-    image: '/images/vehicles/tavera.jpg',
+    image: '/images/vehicles/tavera.svg',
     color: 'from-amber-500 to-orange-500',
   },
   {
@@ -28,7 +28,7 @@ const VEHICLES = [
     pricePerKm: '₹12',
     perfectFor: ['Family trips (7 pax)', 'Airport pickups', 'Short tours'],
     amenities: ['AC, Music, GPS', 'Premium seats', 'USB charging', 'Ample legroom'],
-    image: '/images/vehicles/innova.jpg',
+    image: '/images/vehicles/innova.svg',
     color: 'from-blue-500 to-royalBlue',
   },
   {
@@ -40,7 +40,7 @@ const VEHICLES = [
     pricePerKm: '₹14',
     perfectFor: ['Pilgrimage tours', 'Corporate outings', 'Family gatherings'],
     amenities: ['AC, Music, GPS', 'Pushback seats', '2×2 layout', 'Water bottles'],
-    image: '/images/vehicles/tempo.jpg',
+    image: '/images/vehicles/tempo.svg',
     color: 'from-green-500 to-forestGreen',
   },
   {
@@ -52,7 +52,7 @@ const VEHICLES = [
     pricePerKm: '₹16',
     perfectFor: ['Wedding baraat', 'Religious groups', 'School excursions'],
     amenities: ['AC & Entertainment', 'Reclining seats', 'Mic system', 'Decorated on request'],
-    image: '/images/vehicles/mini-bus.jpg',
+    image: '/images/vehicles/mini-bus.svg',
     color: 'from-purple-500 to-deepPurple',
   },
   {
@@ -64,7 +64,7 @@ const VEHICLES = [
     pricePerKm: '₹20',
     perfectFor: ['Long-distance tours', 'Corporate travel', 'Festival groups'],
     amenities: ['AC, Wi-Fi, TV', 'Airplane-style seats', 'Reading lights', 'Onboard restroom'],
-    image: '/images/vehicles/volvo.jpg',
+    image: '/images/vehicles/volvo.svg',
     color: 'from-saffron to-terracotta',
   },
 ]
@@ -143,12 +143,14 @@ export function VehicleTypes() {
               role="img"
               aria-label={`${active.name} vehicle`}
             >
-              <Image
+              <SafeImage
                 src={active.image}
-                alt={active.name}
-                fill
+                fallbackSrc="/images/hero-bg.png"
+                alt={`${active.name} available for bus booking in Rajasthan`}
+                width={1200}
+                height={760}
                 sizes="(max-width: 1024px) 100vw, 60vw"
-                className="object-cover"
+                className="h-auto w-full object-cover"
               />
               {/* Fallback label */}
               <span className="absolute text-white font-heading text-3xl font-bold opacity-30 select-none z-0">

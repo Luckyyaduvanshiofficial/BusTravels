@@ -1,17 +1,20 @@
 "use client"
 
-import Image from 'next/image'
 import Link from 'next/link'
 import { motion, useReducedMotion } from 'framer-motion'
+import { useEffect, useState } from 'react'
 import { MapPin, Clock3, ArrowRight, IndianRupee, CalendarDays } from 'lucide-react'
 import { POPULAR_ROUTES } from '@/lib/data/landing'
 import { Button } from '@/components/ui/button'
-
-const BLUR_PLACEHOLDER =
-  'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjQwIiBmaWxsPSIjZWFlZWVhIi8+PC9zdmc+'
+import { SafeImage } from './SafeImage'
 
 export function PopularRoutes() {
   const reduceMotion = useReducedMotion()
+  const [coarsePointer, setCoarsePointer] = useState(false)
+
+  useEffect(() => {
+    setCoarsePointer(globalThis.matchMedia('(pointer: coarse)').matches)
+  }, [])
 
   return (
     <section
@@ -21,15 +24,15 @@ export function PopularRoutes() {
     >
       <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[780px]">
         <div className="relative lg:sticky lg:top-0 lg:h-screen">
-          <Image
-            src="https://images.unsplash.com/photo-1570125909517-53cb21c89ff2?auto=format&fit=crop&q=80&w=1600"
-            alt="Route collage showing bus travel from Jaipur to major Rajasthan destinations"
-            fill
+          <SafeImage
+            src="/images/routes-collage.svg"
+            fallbackSrc="/images/hero-bg.png"
+            alt="Collage of popular Rajasthan bus routes from Jaipur"
+            width={1400}
+            height={1100}
             priority={false}
             sizes="(max-width: 1024px) 100vw, 50vw"
-            className="object-cover"
-            placeholder="blur"
-            blurDataURL={BLUR_PLACEHOLDER}
+            className="h-full w-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/35 to-black/15" />
 
@@ -56,12 +59,12 @@ export function PopularRoutes() {
               return (
                 <motion.article
                   key={route.id}
-                  initial={reduceMotion ? false : { opacity: 0, y: 36, scale: 0.98 }}
+                  initial={reduceMotion ? false : { opacity: 0, y: 30 + index * 6, scale: 0.98 }}
                   whileInView={reduceMotion ? {} : { opacity: 1, y: 0, scale: 1 }}
-                  viewport={{ once: true, amount: 0.3 }}
+                  viewport={{ once: true, amount: 0.25 }}
                   transition={{ duration: 0.45, delay: index * 0.08, ease: 'easeOut' }}
-                  whileHover={reduceMotion ? {} : { y: -5, scale: 1.01 }}
-                  className={`relative rounded-2xl border border-gray-200 bg-white p-5 sm:p-6 shadow-[0_10px_30px_rgba(0,0,0,0.08)] transition-transform will-change-transform ${overlapMargin}`}
+                  whileHover={reduceMotion || coarsePointer ? {} : { y: -6, scale: 1.01 }}
+                  className={`group relative rounded-2xl border border-gray-200 bg-white p-5 sm:p-6 shadow-[0_10px_30px_rgba(0,0,0,0.08)] transition-transform will-change-transform focus-within:ring-2 focus-within:ring-saffron/50 ${overlapMargin}`}
                   style={{ zIndex: POPULAR_ROUTES.length - index }}
                   itemScope
                   itemType="https://schema.org/Offer"
@@ -107,16 +110,22 @@ export function PopularRoutes() {
 
                   <div className="flex flex-wrap items-center gap-2.5 pt-1">
                     <Link href={`/search?pickup=${encodeURIComponent(route.from)}&drop=${encodeURIComponent(route.to)}`}>
-                      <Button className="gradient-saffron text-white rounded-xl h-10 px-4 font-semibold hover:-translate-y-0.5 transition-transform focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-saffron">
+                      <Button
+                        aria-label={`Check availability from ${route.from} to ${route.to}`}
+                        className="gradient-saffron text-white rounded-xl h-10 px-4 font-semibold hover:-translate-y-0.5 transition-transform focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-saffron"
+                      >
                         Check Availability
                         <ArrowRight className="ml-1.5 w-4 h-4" aria-hidden="true" />
                       </Button>
                     </Link>
-                    <Link
-                      href={`/search?pickup=${encodeURIComponent(route.from)}&drop=${encodeURIComponent(route.to)}&time=best`}
-                      className="text-sm font-semibold text-royalBlue hover:text-saffron focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-royalBlue/40 rounded-md px-2 py-1"
-                    >
-                      View best-time slots
+                    <Link href={`/search?pickup=${encodeURIComponent(route.from)}&drop=${encodeURIComponent(route.to)}&time=best`}>
+                      <Button
+                        variant="outline"
+                        aria-label={`View best-time slots from ${route.from} to ${route.to}`}
+                        className="rounded-xl h-10 px-4 font-semibold text-royalBlue border-royalBlue/30 hover:bg-royalBlue/5 hover:text-royalBlue focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-royalBlue"
+                      >
+                        Best-time slots
+                      </Button>
                     </Link>
                   </div>
                 </motion.article>
