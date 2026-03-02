@@ -1,0 +1,91 @@
+{
+	"servers": {
+		"supabase": {
+			"type": "http",
+			"url": "https://mcp.supabase.com/mcp?project_ref=tslvmtzvmolpboorjtkh"
+		},
+		"TestSprite": {
+			"command": "npx",
+			"args": [
+				"@testsprite/testsprite-mcp@latest"
+			],
+			"env": {
+				"API_KEY": "sk-user-swh1oqBOxaduIvAydaH-FSzZMlyaC3DBpHLs1YiNgM5i7HuUtrKUYy6BVk6a-Pl0wD0rmr6iRPwxk6CCfh69nOHpR1vVfVRao83eBittwLNXQ4wJXRKU09Q8npMX8dObC9I"
+			},
+			"type": "stdio"
+		},
+		"postmanmcp": {
+			"url": "https://mcp.postman.com/mcp",
+			"type": "http"
+		},
+		"shadcn": {
+			"command": "npx",
+			"args": [
+				"shadcn@latest",
+				"mcp"
+			],
+			"type": "stdio"
+		},
+		"context7-mcp": {
+			"type": "stdio",
+			"command": "npx",
+			"args": [
+				"-y",
+				"@upstash/context7-mcp@latest"
+			]
+		},
+		"mem0-mcp": {
+			"type": "stdio",
+			"command": "uvx",
+			"args": [
+				"mem0-mcp-server"
+			],
+			"env": {
+				"MEM0_API_KEY": "m0-UqZoI3ZPNa7D0uqRXlysGgrLblB512ZM5fhX5ZJ2",
+				"MEM0_DEFAULT_USER_ID": "cline-user"
+			}
+		},
+		"playwright-mcp": {
+			"type": "stdio",
+			"command": "npx",
+			"args": [
+				"-y",
+				"@playwright/mcp@latest"
+			]
+		},
+		"filesystem": {
+			"type": "stdio",
+			"command": "npx",
+			"args": [
+				"-y",
+				"@modelcontextprotocol/server-filesystem",
+				"d:\\Bus Booking app"
+			]
+		},
+		"browser-tools-mcp": {
+			"type": "stdio",
+			"command": "npx",
+			"args": [
+				"-y",
+				"@agentdeskai/browser-tools-mcp@latest"
+			]
+		},
+		"sequential-thinking": {
+			"type": "stdio",
+			"command": "npx",
+			"args": [
+				"-y",
+				"@modelcontextprotocol/server-sequential-thinking"
+			]
+		},
+		"figmaRemoteMcp": {
+			"url": "https://mcp.figma.com/mcp",
+			"type": "http"
+		},
+		"motion": {
+			"type": "http",
+			"url": "https://api.motion.dev/registry.tgz?package=motion-studio-mcp&version=latest"
+		}
+	},
+	"inputs": []
+}
